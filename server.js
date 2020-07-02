@@ -124,7 +124,7 @@ app.get("/city/:cityName", (req, res) => {
 //     .forEach((event) => res.send(event));
 // });
 
-// Homework Task 3
+// Homework Task 4
 app.get("/:city", (req, res) => {
   const lat = req.query.lat;
   const lon = req.query.lon;
@@ -137,7 +137,7 @@ app.get("/:city", (req, res) => {
     .forEach((event) => res.send(event));
 });
 
-// //Homework Task 3
+// //Homework Task 5
 // app.get("/:city", (req, res) => {
 //   const id = req.query.id;
 //   console.log("a client request the weather of " + id);
