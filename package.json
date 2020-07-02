@@ -1,0 +1,18 @@
+{
+  "name": "myapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "akond",
+  "license": "ISC",
+  "dependencies": {
+    "convert-string-to-number": "^1.0.3",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jshint": "^2.11.1"
+  }
+}
