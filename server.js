@@ -105,9 +105,46 @@ app.get("/city/:cityName", (req, res) => {
   const cityNombre = req.params.cityName;
   console.log("a client request the weather of " + cityNombre);
   myCities
-    .filter((ev) => ev.cityName == cityNombre)
-    .map((e) => {
-      return { city: e.cityName, weather: e.weather };
+    .filter((e) => e.cityName == cityNombre)
+    .map((ev) => {
+      return { city: ev.cityName, weather: ev.weather };
     })
     .forEach((event) => res.send(event));
 });
+
+// //Homework Task 3
+// app.get("/:city", (req, res) => {
+//   const name = req.query.name;
+//   console.log("a client request the weather of " + name);
+//   myCities
+//     .filter((e) => e.cityName == name)
+//     .map((ev) => {
+//       return { city: ev.cityName, weather: ev.weather };
+//     })
+//     .forEach((event) => res.send(event));
+// });
+
+// Homework Task 3
+app.get("/:city", (req, res) => {
+  const lat = req.query.lat;
+  const lon = req.query.lon;
+  console.log("a client request the weather of " + lat);
+  myCities
+    .filter((e) => e.latitude == lat && e.longitude == lon)
+    .map((ev) => {
+      return { city: ev.cityName, weather: ev.weather };
+    })
+    .forEach((event) => res.send(event));
+});
+
+// //Homework Task 3
+// app.get("/:city", (req, res) => {
+//   const id = req.query.id;
+//   console.log("a client request the weather of " + id);
+//   myCities
+//     .filter((e) => e.id == id)
+//     .map((ev) => {
+//       return { city: ev.cityName, weather: ev.weather };
+//     })
+//     .forEach((event) => res.send(event));
+// });
