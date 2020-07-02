@@ -149,15 +149,27 @@ app.get("/cityId", (req, res) => {
     .forEach((event) => res.send(event));
 });
 
-//Task 6
+// Task 6
 
-// app.get("/:country", (req, res) => {
-//   const coutryName = req.query.coutryName;
-//   console.log("a client request the weather of " + coutryName);
-//   myCities
-//     .filter((e) => e.country == coutryName)
-//     .map((ev) => {
-//       return { city: ev.cityName, weather: ev.weather };
-//     })
-//     .forEach((event) => res.send(event));
-// });
+app.get("/country", (req, res) => {
+  const name = req.query.name;
+  console.log("a client request the weather of " + name);
+  myCities
+    .filter((e) => e.country == name)
+    .map((ev) => {
+      return { city: ev.cityName, weather: ev.weather };
+    })
+    .forEach((event) => res.send(event));
+});
+
+//Task 7
+app.get("/city/search/:text", (req, res) => {
+  const text = req.params.text;
+  console.log("a client request the weather of " + text);
+  myCities
+    .filter((e) => e.cityName.includes(text))
+    .map((ev) => {
+      return { city: ev.cityName, weather: ev.weather };
+    })
+    .forEach((event) => res.send(event));
+});
