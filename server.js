@@ -162,7 +162,7 @@ app.get("/country", (req, res) => {
     .forEach((event) => res.send(event));
 });
 
-//Task 7
+//Task 7.
 app.get("/city/search/:text", (req, res) => {
   const text = req.params.text;
   console.log("a client request the weather of " + text);
